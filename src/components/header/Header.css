@@ -1,0 +1,8 @@
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    text-decoration: underline;
+    color: white;
+}
