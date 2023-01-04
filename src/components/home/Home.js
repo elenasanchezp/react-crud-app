@@ -12,21 +12,19 @@ import List from '../users/List';
 
 function Home(){
 
-    return(     
-        
+    return(        
         <div>
             <Container fluid="md">
                 <Row>
                     <Col >
                         <List />
-                        
-                        <div > 
-                            <p>If you want to <strong>add a new User</strong>, please do click <Link to="/add"><Button variant="link">here</Button></Link></p>
-                        </div>   
+
+                        <div> 
+                            <p>If you want to <strong>add a new User</strong>, please do click <Link to="/add">here</Link></p>
+                        </div> 
                     </Col>
                 </Row>
-            </Container>       
-
+            </Container>   
         </div>
     );
 }

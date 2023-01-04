@@ -25,9 +25,10 @@ function Edit(){
         e.preventDefault();
 
         let users = Users[index];
-        users.Name = name; 
-        users.Birthdate = birthdate;
+        users.name = name; 
+        users.birthdate = birthdate;
 
+        console.log(users)
         history('/');
     };
 
@@ -41,13 +42,13 @@ function Edit(){
         <>
             <Container fluid="md">
                 <Card className="mt-2">
-                    <Card.Header>Edit an user</Card.Header>
+                    <Card.Header><h1>Edit an user</h1></Card.Header>
                     <Card.Body>
                         <Card.Text>Please, edit the user´s details</Card.Text>
                         
                         <Form validated={validated} onSubmit={handleSubmit}>
                             <FormGroup className="mb-3" controlId="formName">
-                                <Form.Label>Name</Form.Label>
+                                <Form.Label><strong>Name</strong></Form.Label>
                                 <Form.Control type="text" 
                                                 placeholder="Enter Name" 
                                                 required 
@@ -57,7 +58,7 @@ function Edit(){
                                 <Form.Control.Feedback type="invalid">Please provide a name.</Form.Control.Feedback>
                             </FormGroup> 
                             <FormGroup className="mb-3" controlId="formBirthdate">
-                                <Form.Label>Birthdate</Form.Label>
+                                <Form.Label><strong>Birthdate</strong></Form.Label>
                                 <Form.Control type="date" 
                                                 placeholder="Enter birthdate" 
                                                 value={birthdate}

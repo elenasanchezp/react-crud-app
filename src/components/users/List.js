@@ -14,11 +14,10 @@ function List(){
 
     let history = useNavigate();
 
-    const handleViewDetails = (id) => {
-        return (
-            <div>
-            </div>
-        )
+    const handleViewDetails = (id, name, birthdate) => {
+        localStorage.setItem('Id', id);
+        localStorage.setItem('Name', name);
+        localStorage.setItem('Birthdate', birthdate);
     };
 
     const handleEdit = (id, name, birthdate) => {
@@ -61,7 +60,7 @@ function List(){
     return(       
         <div>
             <Card className="mt-2">
-                <Card.Header>List of users</Card.Header>
+                <Card.Header><h1>List of users</h1></Card.Header>
                 <Card.Body>
                     {userMessage && <Alert variant="success">{userMessage}</Alert>}
 
@@ -86,7 +85,7 @@ function List(){
                                             <td>{user.birthdate}</td>
                                             <td>
                                                 <Link to="/details">
-                                                    <Button variant="link" onClick={() => handleViewDetails(user.id)}>View details</Button>
+                                                    <Button variant="link" onClick={() => handleViewDetails(user.id, user.name, user.birthdate)}>View details</Button>
                                                 </Link>
                                                 <Link to="/edit">
                                                     <Button variant="link" onClick={() => handleEdit(user.id, user.name, user.birthdate)}>Update</Button>
