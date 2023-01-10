@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from  'react';
 
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import FormGroup from 'react-bootstrap/FormGroup';
@@ -21,20 +21,28 @@ function Edit(){
         return e.id;
     }).indexOf(id);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        const form = event.currentTarget;
 
-        let users = Users[index];
-        users.name = name; 
-        users.birthdate = birthdate;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            setValidated(true);
+        } else {
+            setValidated(true);
 
-        console.log(users)
-        history('/');
+            let users = Users[index];
+            users.name = name; 
+            users.birthdate = birthdate;
+
+            console.log(users);
+            history('/');
+        }
     };
 
     useEffect (() => {
-        setName(localStorage.getItem('Name'))
-        setBirthdate(localStorage.getItem('Birthdate'))
+        setName(localStorage.getItem('Name'));
+        setBirthdate(localStorage.getItem('Birthdate'));
         setId(localStorage.getItem('Id'));
     }, []);
 
@@ -46,7 +54,7 @@ function Edit(){
                     <Card.Body>
                         <Card.Text>Please, edit the user´s details</Card.Text>
                         
-                        <Form validated={validated} onSubmit={handleSubmit}>
+                        <Form noValidate validated={validated} onSubmit={handleSubmit}>
                             <FormGroup className="mb-3" controlId="formName">
                                 <Form.Label><strong>Name</strong></Form.Label>
                                 <Form.Control type="text" 

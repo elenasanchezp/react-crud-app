@@ -1,21 +1,20 @@
 import React, {useState, useEffect}  from  'react';
 import Container from 'react-bootstrap/Container';
-import {Button, Card, Table } from 'react-bootstrap';
-
-import Users from './Users';
+import {Card, Table } from 'react-bootstrap';
+//import Users from './Users';
 
 function Details(){
     const [id, setId] = useState(''); 
     const [name, setName] = useState(''); 
     const [birthdate, setBirthdate] = useState(''); 
 
-    var index = Users.map(function(e) {
-        return e.id;
-    }).indexOf(id);
+    // var index = Users.map(function(e) {
+    //     return e.id;
+    // }).indexOf(id);
 
     useEffect (() => {
-        setName(localStorage.getItem('Name'))
-        setBirthdate(localStorage.getItem('Birthdate'))
+        setName(localStorage.getItem('Name'));
+        setBirthdate(localStorage.getItem('Birthdate'));
         setId(localStorage.getItem('Id'));
     }, []);
 

@@ -1,9 +1,9 @@
 import {React, useState} from  'react';
-import {Link, useNavigate } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom';
 import {Button, Card, Table, Alert } from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Users from './Users';
-import DeleteConfirmation from "../shared/deleteConfirmation/DeleteConfirmation";
+import DeleteConfirmation from '../shared/deleteConfirmation/DeleteConfirmation';
 
 function List(){
 
@@ -79,7 +79,7 @@ function List(){
                                 ? 
                                 Users.map((user) => {
                                     return(
-                                        <tr>
+                                        <tr key={user.id}>
                                             <td>{user.id}</td>
                                             <td>{user.name}</td>
                                             <td>{user.birthdate}</td>
@@ -93,11 +93,11 @@ function List(){
                                                 <Button variant="link" onClick={() => showDeleteModal(user.id)}>Delete</Button>
                                             </td>
                                         </tr>
-                                    )                            
+                                    );                            
                                 })
                                 : 
                                 <tr>
-                                    <td colspan="4"><p>There is no users defined</p></td>
+                                    <td colSpan='4'><p>There is no users defined</p></td>
                                 </tr>                        
                             }                   
                         </tbody>

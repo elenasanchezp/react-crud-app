@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Route, Routes } from 'react-router-dom'
+import {BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './components/home/Home';
 import Help from './components/help/Help';
@@ -9,8 +9,8 @@ import Add from './components/users/Add';
 import Edit from './components/users/Edit';
 import Details from './components/users/Details';
 
-import Header from './components/header/Header'
-import Footer from './components/footer/Footer'
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 

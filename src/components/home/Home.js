@@ -1,17 +1,14 @@
 import React from  'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './Home.css';
-import {Button} from 'react-bootstrap';
-
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import List from '../users/List';
 
 function Home(){
-
     return(        
         <div>
             <Container fluid="md">
