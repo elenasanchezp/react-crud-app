@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Route, Routes } from 'react-router-dom';
+import {HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './components/home/Home';
 import Help from './components/help/Help';
@@ -17,7 +17,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
 
       <div className="App">
@@ -35,7 +35,7 @@ function App() {
       <hr />
 
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
